@@ -1,5 +1,3 @@
-<h1>Create new todo</h1>
-
 <% if @todo.errors.any? %>
     <h2>Can't create to do</h2>
     <ul>
@@ -8,8 +6,7 @@
         <% end %>
     </ul>
 <% end %>
-
-<%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+<%= form_for @todo do |f| %>
     <p> 
         <%= f.label :name %><br>
         <%= f.text_field :name %>
@@ -21,6 +18,6 @@
     </p>
     
     <p>
-        <%= f.submit %>
+        <%= f.submit "Edit" %>
     </p>
 <% end %>
